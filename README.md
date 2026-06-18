@@ -2,6 +2,10 @@
 
 Portafolio profesional de Jorge Rodrigo Masson Reynoso, construido como una aplicacion web independiente con React Native Web y Vite.
 
+## Sitio publicado
+
+https://jorgemasson.github.io/jorge-portfolio/
+
 ## Stack
 
 - React
