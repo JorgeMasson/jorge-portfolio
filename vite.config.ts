@@ -1,0 +1,12 @@
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: [
+      { find: /^react-native$/, replacement: 'react-native-web' },
+      { find: /^react-native\/(.*)$/, replacement: 'react-native-web/$1' },
+    ],
+  },
+});
