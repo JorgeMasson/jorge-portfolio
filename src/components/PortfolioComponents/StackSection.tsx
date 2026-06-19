@@ -13,25 +13,29 @@ type StackSectionProps = {
 export const StackSection = memo<StackSectionProps>(({ title, groups, id }) => (
   <Section title={title} id={id}>
     <View style={styles.grid}>
-      {groups.map(group => (
-        <View key={group.title} style={styles.group}>
-          <View style={styles.accent} />
-          <Text style={styles.groupTitle}>{group.title}</Text>
-          <Text style={styles.description}>{group.description}</Text>
-          <View style={styles.featured}>
-            {group.featured.map(item => (
-              <View key={item} style={styles.featuredPill}>
-                <Text style={styles.featuredText}>{item}</Text>
-              </View>
-            ))}
+      {groups.map(group => {
+        const secondaryItems = group.items.filter(item => !group.featured.includes(item));
+
+        return (
+          <View key={group.title} style={styles.group}>
+            <View style={styles.accent} />
+            <Text style={styles.groupTitle}>{group.title}</Text>
+            <Text style={styles.description}>{group.description}</Text>
+            <View style={styles.featured}>
+              {group.featured.map(item => (
+                <View key={item} style={styles.featuredPill}>
+                  <Text style={styles.featuredText}>{item}</Text>
+                </View>
+              ))}
+            </View>
+            <View style={styles.tags}>
+              {secondaryItems.map(item => (
+                <Tag key={item} text={item} color="blue" />
+              ))}
+            </View>
           </View>
-          <View style={styles.tags}>
-            {group.items.map(item => (
-              <Tag key={item} text={item} color="blue" />
-            ))}
-          </View>
-        </View>
-      ))}
+        );
+      })}
     </View>
   </Section>
 ));
