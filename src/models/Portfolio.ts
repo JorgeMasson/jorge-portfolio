@@ -25,6 +25,16 @@ export type Education = {
   professionalId: string;
 };
 
+export type ContactFormCopy = {
+  emailLabel: string;
+  emailPlaceholder: string;
+  subjectLabel: string;
+  subjectPlaceholder: string;
+  messageLabel: string;
+  messagePlaceholder: string;
+  submit: string;
+};
+
 export type ExperienceItem = {
   company: string;
   role: string;
@@ -44,6 +54,8 @@ export type Project = {
 
 export type StackGroup = {
   title: string;
+  description: string;
+  featured: string[];
   items: string[];
 };
 

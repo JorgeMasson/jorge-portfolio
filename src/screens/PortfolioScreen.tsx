@@ -50,11 +50,12 @@ export const PortfolioScreen = () => {
           items={experience[language]}
         />
         <ProjectsSection title={copy.sections.projects} projects={projects[language]} isMobile={isMobile} />
-        <StackSection id="stack" title={copy.sections.stack} groups={stackGroups} />
+        <StackSection id="stack" title={copy.sections.stack} groups={stackGroups[language]} />
         <EducationSection id="education" title={copy.sections.education} education={education[language]} />
         <ContactSection
           title={copy.sections.contact}
           intro={copy.contactIntro}
+          form={copy.contactForm}
           profile={profile}
           isMobile={isMobile}
         />

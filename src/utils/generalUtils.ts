@@ -23,11 +23,6 @@ export const getContactLinks = (profile: Profile) => [
     value: 'JorgeMasson',
     url: profile.github,
   },
-  {
-    label: 'Email',
-    value: profile.email,
-    url: `mailto:${profile.email}`,
-  },
 ];
 
 export const navigateToHash = (hash: string) => {
